@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
+    <title>vue train</title>
+</head>
+<body>
+    <div id="app">
+        <div class="grid">
+            <input @keyup.enter="calc()" type="text" v-model="result" placeholder="0">
+            <button class="cell num" v-for="num in numbers" v-on:click="input(num)">{{num}}</button>
+            <button class="cell op" v-for="op in operations" v-on:click="input(op)">{{op}}</button>
+            <button @click="reset()" class="cell op">R</button>
+            <button @click="calc()" class="cell op">=</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
